@@ -46,6 +46,7 @@ const FeedbackForm = () => {
 
       if (editFeedback.edit === true) {
         updatedFeedback(editFeedback.item.id, newFeedback);
+        editFeedback.edit = false;
       } else {
         handleAddFeedback(newFeedback);
       }
