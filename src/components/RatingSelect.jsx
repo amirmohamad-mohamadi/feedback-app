@@ -1,12 +1,22 @@
-import { useState } from "react";
+import { useState, useContext, useEffect } from "react";
+
+import FeedbackContext from "../context/FeedbackContext";
 
 const RatingSelect = ({ select }) => {
   const [selected, setSelected] = useState(10);
+  const { editFeedback } = useContext(FeedbackContext);
+
+  useEffect(() => {
+    if (editFeedback.edit === true) {
+      setSelected(editFeedback.item.rating);
+    }
+  }, [editFeedback]);
 
   const handleChange = (e) => {
     setSelected(+e.currentTarget.value);
     select(+e.currentTarget.value);
   };
+  // بعلاوه ها به خاطر اینکه وقتی روی یکدونه از مقادیر کلیک کردیم رنگ روش بمونه
 
   return (
     <ul className="rating">
