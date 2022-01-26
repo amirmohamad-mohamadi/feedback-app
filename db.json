@@ -1,8 +1,8 @@
 {
   "feedback": [
     {
-      "rating": "10",
-      "text": "one Lorem ipsum dolor sit amet consectetur adipisicing elit. consequuntur vel vitae commodi alias voluptatem est voluptatum ipsa quae",
+      "text": "one Lorem ipsum dsdf",
+      "rating": 4,
       "id": 1
     },
     {
@@ -14,6 +14,11 @@
       "id": 3,
       "rating": 8,
       "text": "three Lorem ipsum dolor sit amet consectetur adipisicing elit. consequuntur vel vitae commodi alias voluptatem est voluptatum ipsa quae."
+    },
+    {
+      "text": "drgdgfddsfdssd",
+      "rating": 6,
+      "id": 4
     }
   ]
 }
