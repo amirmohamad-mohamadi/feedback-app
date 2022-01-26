@@ -3,15 +3,18 @@ import { useContext } from "react";
 
 import FeedbackItem from "./FeedbackItem";
 import FeedbackContext from "../context/FeedbackContext";
+import Spinner from "./shared/Spinner";
 
-const FeedbackList = ({ handleDelete }) => {
-  const { feedback } = useContext(FeedbackContext);
+const FeedbackList = () => {
+  const { feedback, isLoading } = useContext(FeedbackContext);
 
-  if (!feedback || feedback.length === 0) {
+  if ((!isLoading && !feedback) || feedback.length === 0) {
     return <p>Not Feedback Yet</p>;
   }
 
-  return (
+  return isLoading ? (
+    <Spinner />
+  ) : (
     <div>
       <AnimatePresence>
         {feedback.map((item) => {
